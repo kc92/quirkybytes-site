@@ -47,7 +47,7 @@ export default function ContactPage() {
               GET IN TOUCH
             </h1>
             <p className="font-terminal text-xl text-white max-w-xl mx-auto">
-              Ready to build something amazing? Drop us a line!
+              Got a project? Let&apos;s talk.
             </p>
           </div>
         </Window>

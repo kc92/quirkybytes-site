@@ -164,7 +164,7 @@ export default function AIEraPage() {
                 margin: "0 auto 36px",
               }}
             >
-              {company.description} Powered by modern tech and a passion for craft.
+              {company.description}
             </p>
             
             {/* CTA Buttons */}

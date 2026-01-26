@@ -484,7 +484,7 @@ export default function ModernEraPage() {
                   letterSpacing: "-1px",
                 }}
               >
-                Let&apos;s build something amazing
+                Got a project?
               </h2>
               <p
                 style={{
@@ -493,7 +493,7 @@ export default function ModernEraPage() {
                   marginBottom: "32px",
                 }}
               >
-                Ready to start your next project? Submit an inquiry.
+                Tell us what you need. We&apos;ll tell you if we can help.
               </p>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "16px" }}>
                 <a

@@ -212,6 +212,9 @@ export default function GuestbookPage() {
             <p style={{ fontFamily: "'VT323', monospace", color: "#00ff00", fontSize: "18px" }}>
               📝 Total Signatures: <b>{entries.length}</b> | 🌍 Visitors from around the world!
             </p>
+            <p style={{ fontFamily: "'VT323', monospace", color: "#666", fontSize: "12px", marginTop: "8px" }}>
+              * Sample entries shown for era authenticity
+            </p>
           </div>
         </Window>
 

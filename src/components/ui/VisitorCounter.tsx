@@ -41,7 +41,8 @@ export function VisitorCounter() {
           </span>
         ))}
       </div>
-      <p style={{ color: "#666", marginTop: "8px", fontSize: "14px" }}>since December 1999</p>
+      <p style={{ color: "#666", marginTop: "8px", fontSize: "14px" }}>since December 1999*</p>
+      <p style={{ color: "#444", marginTop: "4px", fontSize: "10px", fontStyle: "italic" }}>*era simulation</p>
     </div>
   );
 }

@@ -112,6 +112,9 @@ export default function GeocitiesEraPage() {
                   </div>
                 ))}
               </div>
+              <p style={{ textAlign: "center", fontSize: "10px", color: "#666", marginTop: "12px", fontStyle: "italic" }}>
+                * Decorative badges for era authenticity
+              </p>
             </div>
           </Window>
 
@@ -178,8 +181,8 @@ export default function GeocitiesEraPage() {
                 </thead>
                 <tbody style={{ fontFamily: "'VT323', monospace", fontSize: "18px" }}>
                   {[
-                    { icon: "🌐", name: "WEBSITES", desc: "Custom sites that load fast and look amazing" },
-                    { icon: "⚡", name: "WEB APPS", desc: "Full-stack applications built to scale" },
+                    { icon: "🌐", name: "WEBSITES", desc: "Fast sites that actually convert" },
+                    { icon: "⚡", name: "WEB APPS", desc: "Apps with real backend logic" },
                     { icon: "🎮", name: "GAMES", desc: "Browser games to full MMORPGs" },
                     { icon: "🤖", name: "AI TOOLS", desc: "Smart automation and chatbots" },
                   ].map((service, i) => (
@@ -212,7 +215,10 @@ export default function GeocitiesEraPage() {
                   </div>
                 ))}
               </div>
-              <div style={{ textAlign: "center", marginTop: "16px" }}>
+              <p style={{ textAlign: "center", fontSize: "11px", color: "#999", marginTop: "12px", fontStyle: "italic" }}>
+                * Sample entries for era authenticity
+              </p>
+              <div style={{ textAlign: "center", marginTop: "12px" }}>
                 <Button href="/guestbook">✏️ SIGN GUESTBOOK</Button>
               </div>
             </div>
@@ -226,7 +232,7 @@ export default function GeocitiesEraPage() {
                 GET IN TOUCH!
               </h2>
               <p style={{ color: "#fff", fontFamily: "'VT323', monospace", fontSize: "22px", marginBottom: "24px" }}>
-                Ready to build something amazing? Submit an inquiry!
+                Got a project? Tell us about it.
               </p>
               <Button href="/contact" variant="hot">
                 📨 SUBMIT INQUIRY
