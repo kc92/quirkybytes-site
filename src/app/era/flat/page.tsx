@@ -415,26 +415,6 @@ export default function FlatEraPage() {
               >
                 ✉️ Email Us
               </a>
-              <a
-                href={company.discord}
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "8px",
-                  padding: "16px 32px",
-                  background: "transparent",
-                  color: "#fff",
-                  textDecoration: "none",
-                  fontSize: "14px",
-                  fontWeight: "700",
-                  textTransform: "uppercase",
-                  letterSpacing: "1px",
-                  borderRadius: "4px",
-                  border: "2px solid #fff",
-                }}
-              >
-                💬 Discord
-              </a>
             </div>
           </div>
         </section>

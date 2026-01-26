@@ -231,25 +231,6 @@ export default function GeocitiesEraPage() {
               <Button href="mailto:hello@quirkybytes.com?subject=Project%20Inquiry" variant="hot">
                 📨 EMAIL US NOW!
               </Button>
-              <div style={{ marginTop: "24px" }}>
-                <a
-                  href="https://discord.gg/quirkybytes"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    padding: "12px 24px",
-                    background: "linear-gradient(to bottom, #7289da, #5865f2)",
-                    border: "3px solid #99aaff",
-                    color: "#fff",
-                    fontFamily: "'VT323', monospace",
-                    fontSize: "20px",
-                    textDecoration: "none",
-                  }}
-                >
-                  💬 CHAT ON DISCORD!
-                </a>
-              </div>
             </div>
           </Window>
         </div>

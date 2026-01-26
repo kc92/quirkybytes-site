@@ -404,25 +404,6 @@ export default function Web2EraPage() {
                 >
                   ✉️ Email Us
                 </a>
-                <a
-                  href={company.discord}
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    padding: "12px 24px",
-                    background: "linear-gradient(180deg, #7289da 0%, #5865f2 100%)",
-                    color: "#fff",
-                    textDecoration: "none",
-                    fontSize: "14px",
-                    fontWeight: "bold",
-                    borderRadius: "8px",
-                    border: "1px solid #4752c4",
-                    boxShadow: "0 3px 6px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2)",
-                  }}
-                >
-                  💬 Join Discord
-                </a>
               </div>
             </div>
           </section>

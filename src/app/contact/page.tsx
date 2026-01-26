@@ -217,14 +217,6 @@ export default function ContactPage() {
               >
                 📧 hello@quirkybytes.com
               </a>
-              <a
-                href="https://discord.gg/quirkybytes"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-6 py-3 bg-[#5865f2] border-2 border-[#7289da] font-terminal no-underline text-white hover:bg-[#4752c4]"
-              >
-                💬 Join Our Discord
-              </a>
             </div>
           </div>
         </Window>

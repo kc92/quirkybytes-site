@@ -438,24 +438,6 @@ export default function AIEraPage() {
               >
                 ✉️ Email Us
               </a>
-              <a
-                href={company.discord}
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "8px",
-                  padding: "14px 28px",
-                  background: theme.surface,
-                  color: theme.text,
-                  textDecoration: "none",
-                  fontSize: "15px",
-                  fontWeight: "600",
-                  borderRadius: "10px",
-                  border: `1px solid ${theme.border}`,
-                }}
-              >
-                💬 Discord
-              </a>
             </div>
           </div>
         </section>

@@ -513,24 +513,6 @@ export default function ModernEraPage() {
                 >
                   ✉️ Get in Touch
                 </a>
-                <a
-                  href={company.discord}
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    padding: "16px 32px",
-                    background: "rgba(255,255,255,0.05)",
-                    color: "#fff",
-                    textDecoration: "none",
-                    fontSize: "15px",
-                    fontWeight: "600",
-                    borderRadius: "12px",
-                    border: "1px solid rgba(255,255,255,0.1)",
-                  }}
-                >
-                  💬 Join Discord
-                </a>
               </div>
             </div>
           </div>

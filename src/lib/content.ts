@@ -9,7 +9,6 @@ export const siteContent = {
       "We build websites, apps, and games that stand out. Quality work. No shortcuts.",
     founded: "1999",
     email: "hello@quirkybytes.com",
-    discord: "https://discord.gg/quirkybytes",
   },
 
   services: [
