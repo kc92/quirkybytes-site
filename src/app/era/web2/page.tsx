@@ -386,7 +386,7 @@ export default function Web2EraPage() {
               </p>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "16px" }}>
                 <a
-                  href="/contact"
+                  href="/contact?era=web2"
                   style={{
                     display: "inline-flex",
                     alignItems: "center",

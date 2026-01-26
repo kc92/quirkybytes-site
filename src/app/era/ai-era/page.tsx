@@ -422,7 +422,7 @@ export default function AIEraPage() {
             
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "12px" }}>
               <a
-                href="/contact"
+                href="/contact?era=ai-era"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",

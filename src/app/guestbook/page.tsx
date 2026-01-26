@@ -1,7 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { Window, Button, FancyHR } from "@/components/ui";
+import { EraSlider } from "@/components/EraSlider";
+import { CRTEffect } from "@/components/effects/CRTEffect";
+import { MouseTrail } from "@/components/effects/MouseTrail";
 
 interface GuestbookEntry {
   id: string;
@@ -19,7 +23,78 @@ function formatDate(dateString: string): string {
   });
 }
 
+// Era-specific styles
+const eraStyles: Record<string, {
+  bg: string;
+  containerBg: string;
+  text: string;
+  accent: string;
+  font: string;
+  showEffects: boolean;
+}> = {
+  dawn: {
+    bg: "#c0c0c0",
+    containerBg: "#fff",
+    text: "#000",
+    accent: "#0000ff",
+    font: "Times New Roman, serif",
+    showEffects: false,
+  },
+  geocities: {
+    bg: "#000033",
+    containerBg: "#000033",
+    text: "#fff",
+    accent: "#00ffff",
+    font: "'VT323', monospace",
+    showEffects: true,
+  },
+  web2: {
+    bg: "linear-gradient(180deg, #e8f4fc 0%, #d0e8f8 100%)",
+    containerBg: "#fff",
+    text: "#333",
+    accent: "#3498db",
+    font: "Verdana, sans-serif",
+    showEffects: false,
+  },
+  skeuomorphism: {
+    bg: "linear-gradient(180deg, #8b7355 0%, #5d4e37 100%)",
+    containerBg: "#f5f0e6",
+    text: "#333",
+    accent: "#8b4513",
+    font: "Georgia, serif",
+    showEffects: false,
+  },
+  flat: {
+    bg: "#2c3e50",
+    containerBg: "#ecf0f1",
+    text: "#2c3e50",
+    accent: "#1abc9c",
+    font: "system-ui, sans-serif",
+    showEffects: false,
+  },
+  modern: {
+    bg: "#0a0a0a",
+    containerBg: "#111",
+    text: "#fff",
+    accent: "#8b5cf6",
+    font: "system-ui, sans-serif",
+    showEffects: false,
+  },
+  "ai-era": {
+    bg: "#fafafa",
+    containerBg: "#fff",
+    text: "#1a1a1a",
+    accent: "#2563eb",
+    font: "system-ui, sans-serif",
+    showEffects: false,
+  },
+};
+
 export default function GuestbookPage() {
+  const searchParams = useSearchParams();
+  const era = searchParams.get("era") || "geocities";
+  const styles = eraStyles[era] || eraStyles.geocities;
+  
   const [entries, setEntries] = useState<GuestbookEntry[]>([]);
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
@@ -69,160 +144,231 @@ export default function GuestbookPage() {
     }
   };
 
-  return (
-    <main style={{ minHeight: "100vh", padding: "40px 20px" }}>
-      <div style={{ maxWidth: "800px", margin: "0 auto" }}>
-        {/* Header */}
-        <Window title="📝 C:\\QuirkyBytes\\Guestbook\\README.txt">
-          <div style={{ background: "linear-gradient(to bottom, #000033, #000066)", textAlign: "center", padding: "40px" }}>
-            <div className="animate-spin3d" style={{ fontSize: "60px", marginBottom: "16px", display: "inline-block" }}>📝</div>
-            <h1 className="animate-glow" style={{ fontFamily: "'Press Start 2P', cursive", fontSize: "24px", color: "#00ffff", marginBottom: "16px" }}>
-              GUESTBOOK
-            </h1>
-            <p style={{ fontFamily: "'VT323', monospace", fontSize: "20px", color: "#fff", maxWidth: "500px", margin: "0 auto" }}>
-              Sign our guestbook! Leave a message for the world to see. 🌍
+  // Dawn era - simple HTML style
+  if (era === "dawn") {
+    return (
+      <div style={{ backgroundColor: "#c0c0c0", minHeight: "100vh", fontFamily: "Times New Roman, serif", padding: "20px" }}>
+        <EraSlider />
+        <div style={{ maxWidth: "600px", margin: "60px auto 0", backgroundColor: "#fff", padding: "20px", border: "1px solid #808080" }}>
+          <h1 style={{ textAlign: "center", borderBottom: "2px solid #808080", paddingBottom: "10px" }}>
+            📝 Guestbook
+          </h1>
+          <p style={{ textAlign: "center" }}>Please sign our guestbook!</p>
+          <hr />
+          
+          {/* Form */}
+          <form onSubmit={handleSubmit}>
+            <p><b>Your Name:</b><br />
+              <input
+                type="text"
+                required
+                maxLength={50}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                style={{ width: "100%", padding: "4px", border: "1px solid #808080" }}
+              />
             </p>
-          </div>
-        </Window>
-
-        <FancyHR />
-
-        {/* Sign Form */}
-        <Window title="✏️ SIGN_GUESTBOOK.exe">
-          <div style={{ padding: "24px", backgroundColor: "#ffffcc" }}>
-            {status === "success" ? (
-              <div style={{ textAlign: "center", padding: "24px" }}>
-                <div style={{ fontSize: "48px", marginBottom: "8px" }}>✅</div>
-                <p style={{ fontFamily: "'Press Start 2P', cursive", fontSize: "12px", color: "#00ff00" }}>
-                  THANKS FOR SIGNING!
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit}>
-                <div style={{ marginBottom: "16px" }}>
-                  <label style={{ fontFamily: "'Press Start 2P', cursive", fontSize: "8px", color: "#000080", display: "block", marginBottom: "4px" }}>
-                    YOUR NAME:
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    maxLength={50}
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="~*YourCoolName*~"
-                    style={{
-                      width: "100%",
-                      padding: "12px",
-                      fontFamily: "'VT323', monospace",
-                      fontSize: "18px",
-                      border: "2px solid #808080",
-                      backgroundColor: "#fff",
-                    }}
-                  />
-                </div>
-                <div style={{ marginBottom: "16px" }}>
-                  <label style={{ fontFamily: "'Press Start 2P', cursive", fontSize: "8px", color: "#000080", display: "block", marginBottom: "4px" }}>
-                    YOUR MESSAGE:
-                  </label>
-                  <textarea
-                    required
-                    maxLength={500}
-                    rows={3}
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    placeholder="This site is so cool! ⭐⭐⭐"
-                    style={{
-                      width: "100%",
-                      padding: "12px",
-                      fontFamily: "'VT323', monospace",
-                      fontSize: "18px",
-                      border: "2px solid #808080",
-                      backgroundColor: "#fff",
-                      resize: "none",
-                    }}
-                  />
-                </div>
-                {error && (
-                  <p style={{ color: "#dc2626", fontFamily: "'VT323', monospace", fontSize: "14px", marginBottom: "16px" }}>
-                    ❌ {error}
-                  </p>
-                )}
-                <button
-                  type="submit"
-                  disabled={status === "submitting"}
-                  style={{
-                    width: "100%",
-                    padding: "12px",
-                    background: "linear-gradient(to bottom, #4ade80, #16a34a)",
-                    color: "#fff",
-                    fontFamily: "'VT323', monospace",
-                    fontSize: "20px",
-                    border: "3px solid",
-                    borderTopColor: "#86efac",
-                    borderLeftColor: "#86efac",
-                    borderBottomColor: "#166534",
-                    borderRightColor: "#166534",
-                    cursor: status === "submitting" ? "wait" : "pointer",
-                    opacity: status === "submitting" ? 0.5 : 1,
-                  }}
-                >
-                  {status === "submitting" ? "SIGNING..." : "✍️ SIGN GUESTBOOK"}
-                </button>
-              </form>
-            )}
-          </div>
-        </Window>
-
-        {/* Entries */}
-        <Window title="📖 GUESTBOOK_ENTRIES.html">
-          <div style={{ padding: "16px", backgroundColor: "#fff", maxHeight: "600px", overflowY: "auto" }}>
-            {entries.length === 0 ? (
-              <p style={{ textAlign: "center", fontFamily: "'VT323', monospace", color: "#666", padding: "32px" }}>
-                Loading entries...
-              </p>
-            ) : (
-              <div>
-                {entries.map((entry) => (
-                  <div
-                    key={entry.id}
-                    style={{
-                      padding: "16px",
-                      marginBottom: "16px",
-                      background: "linear-gradient(to right, #ffffee, #ffffcc)",
-                      border: "2px solid #808080",
-                    }}
-                  >
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "8px" }}>
-                      <span style={{ fontWeight: "bold", color: "#000080", fontSize: "18px" }}>{entry.name}</span>
-                      <span style={{ fontFamily: "'VT323', monospace", fontSize: "14px", color: "#666" }}>
-                        {formatDate(entry.createdAt)}
-                      </span>
-                    </div>
-                    <p style={{ fontFamily: "'Comic Neue', cursive", fontSize: "18px" }}>{entry.message}</p>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </Window>
-
-        {/* Stats */}
-        <Window title="📊 STATS.ini">
-          <div style={{ padding: "16px", backgroundColor: "#000", textAlign: "center" }}>
-            <p style={{ fontFamily: "'VT323', monospace", color: "#00ff00", fontSize: "18px" }}>
-              📝 Total Signatures: <b>{entries.length}</b> | 🌍 Visitors from around the world!
+            <p><b>Your Message:</b><br />
+              <textarea
+                required
+                maxLength={500}
+                rows={4}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                style={{ width: "100%", padding: "4px", border: "1px solid #808080" }}
+              />
             </p>
-            <p style={{ fontFamily: "'VT323', monospace", color: "#666", fontSize: "12px", marginTop: "8px" }}>
-              * Sample entries shown for era authenticity
-            </p>
-          </div>
-        </Window>
-
-        {/* Back Link */}
-        <div style={{ textAlign: "center", marginTop: "32px" }}>
-          <Button href="/">← BACK TO HOME</Button>
+            {error && <p style={{ color: "red" }}>Error: {error}</p>}
+            {status === "success" && <p style={{ color: "green" }}>Thank you for signing!</p>}
+            <p><input type="submit" value={status === "submitting" ? "Signing..." : "Sign Guestbook"} disabled={status === "submitting"} /></p>
+          </form>
+          
+          <hr />
+          <h2>Recent Signatures:</h2>
+          {entries.map((entry) => (
+            <div key={entry.id} style={{ marginBottom: "20px", paddingBottom: "10px", borderBottom: "1px dashed #ccc" }}>
+              <b>{entry.name}</b> - <i>{formatDate(entry.createdAt)}</i>
+              <p>{entry.message}</p>
+            </div>
+          ))}
+          <p style={{ fontSize: "12px", color: "#666", textAlign: "center" }}>
+            * Sample entries for era authenticity
+          </p>
+          <hr />
+          <p style={{ textAlign: "center" }}>
+            <a href="/era/dawn" style={{ color: "#0000ff" }}>← Back to Home</a>
+          </p>
         </div>
       </div>
-    </main>
+    );
+  }
+
+  // Geocities era - retro style (default)
+  return (
+    <>
+      <EraSlider />
+      {styles.showEffects && <CRTEffect />}
+      {styles.showEffects && <MouseTrail />}
+      
+      <main style={{ 
+        minHeight: "100vh", 
+        padding: "60px 20px 40px",
+        background: styles.bg,
+        backgroundImage: era === "geocities" ? `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000066' fill-opacity='0.4'%3E%3Cpath d='M20 20.5V1h1v19.5h18.5v1H21v18.5h-1V21.5H1v-1h19.5z'/%3E%3C/g%3E%3C/svg%3E")` : undefined,
+      }}>
+        <div style={{ maxWidth: "800px", margin: "0 auto" }}>
+          {/* Header */}
+          <Window title="📝 C:\\QuirkyBytes\\Guestbook\\README.txt">
+            <div style={{ background: "linear-gradient(to bottom, #000033, #000066)", textAlign: "center", padding: "40px" }}>
+              <div className="animate-spin3d" style={{ fontSize: "60px", marginBottom: "16px", display: "inline-block" }}>📝</div>
+              <h1 className="animate-glow" style={{ fontFamily: "'Silkscreen', monospace", fontSize: "24px", color: "#00ffff", marginBottom: "16px" }}>
+                GUESTBOOK
+              </h1>
+              <p style={{ fontFamily: "'VT323', monospace", fontSize: "20px", color: "#fff", maxWidth: "500px", margin: "0 auto" }}>
+                Sign our guestbook! Leave a message for the world to see. 🌍
+              </p>
+            </div>
+          </Window>
+
+          <FancyHR />
+
+          {/* Sign Form */}
+          <Window title="✏️ SIGN_GUESTBOOK.exe">
+            <div style={{ padding: "24px", backgroundColor: "#ffffcc" }}>
+              {status === "success" ? (
+                <div style={{ textAlign: "center", padding: "24px" }}>
+                  <div style={{ fontSize: "48px", marginBottom: "8px" }}>✅</div>
+                  <p style={{ fontFamily: "'Silkscreen', monospace", fontSize: "12px", color: "#00ff00" }}>
+                    THANKS FOR SIGNING!
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit}>
+                  <div style={{ marginBottom: "16px" }}>
+                    <label style={{ fontFamily: "'Silkscreen', monospace", fontSize: "10px", color: "#000080", display: "block", marginBottom: "4px" }}>
+                      YOUR NAME:
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      maxLength={50}
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      placeholder="~*YourCoolName*~"
+                      style={{
+                        width: "100%",
+                        padding: "12px",
+                        fontFamily: "'VT323', monospace",
+                        fontSize: "18px",
+                        border: "2px solid #808080",
+                        backgroundColor: "#fff",
+                      }}
+                    />
+                  </div>
+                  <div style={{ marginBottom: "16px" }}>
+                    <label style={{ fontFamily: "'Silkscreen', monospace", fontSize: "10px", color: "#000080", display: "block", marginBottom: "4px" }}>
+                      YOUR MESSAGE:
+                    </label>
+                    <textarea
+                      required
+                      maxLength={500}
+                      rows={3}
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      placeholder="This site is so cool! ⭐⭐⭐"
+                      style={{
+                        width: "100%",
+                        padding: "12px",
+                        fontFamily: "'VT323', monospace",
+                        fontSize: "18px",
+                        border: "2px solid #808080",
+                        backgroundColor: "#fff",
+                        resize: "none",
+                      }}
+                    />
+                  </div>
+                  {error && (
+                    <p style={{ color: "#dc2626", fontFamily: "'VT323', monospace", fontSize: "14px", marginBottom: "16px" }}>
+                      ❌ {error}
+                    </p>
+                  )}
+                  <button
+                    type="submit"
+                    disabled={status === "submitting"}
+                    style={{
+                      width: "100%",
+                      padding: "12px",
+                      background: "linear-gradient(to bottom, #4ade80, #16a34a)",
+                      color: "#fff",
+                      fontFamily: "'VT323', monospace",
+                      fontSize: "20px",
+                      border: "3px solid",
+                      borderTopColor: "#86efac",
+                      borderLeftColor: "#86efac",
+                      borderBottomColor: "#166534",
+                      borderRightColor: "#166534",
+                      cursor: status === "submitting" ? "wait" : "pointer",
+                      opacity: status === "submitting" ? 0.5 : 1,
+                    }}
+                  >
+                    {status === "submitting" ? "SIGNING..." : "✍️ SIGN GUESTBOOK"}
+                  </button>
+                </form>
+              )}
+            </div>
+          </Window>
+
+          {/* Entries */}
+          <Window title="📖 GUESTBOOK_ENTRIES.html">
+            <div style={{ padding: "16px", backgroundColor: "#fff", maxHeight: "600px", overflowY: "auto" }}>
+              {entries.length === 0 ? (
+                <p style={{ textAlign: "center", fontFamily: "'VT323', monospace", color: "#666", padding: "32px" }}>
+                  Loading entries...
+                </p>
+              ) : (
+                <div>
+                  {entries.map((entry) => (
+                    <div
+                      key={entry.id}
+                      style={{
+                        padding: "16px",
+                        marginBottom: "16px",
+                        background: "linear-gradient(to right, #ffffee, #ffffcc)",
+                        border: "2px solid #808080",
+                      }}
+                    >
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "8px" }}>
+                        <span style={{ fontWeight: "bold", color: "#000080", fontSize: "18px" }}>{entry.name}</span>
+                        <span style={{ fontFamily: "'VT323', monospace", fontSize: "14px", color: "#666" }}>
+                          {formatDate(entry.createdAt)}
+                        </span>
+                      </div>
+                      <p style={{ fontFamily: "'Comic Neue', cursive", fontSize: "18px" }}>{entry.message}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </Window>
+
+          {/* Stats */}
+          <Window title="📊 STATS.ini">
+            <div style={{ padding: "16px", backgroundColor: "#000", textAlign: "center" }}>
+              <p style={{ fontFamily: "'VT323', monospace", color: "#00ff00", fontSize: "18px" }}>
+                📝 Total Signatures: <b>{entries.length}</b> | 🌍 Visitors from around the world!
+              </p>
+              <p style={{ fontFamily: "'VT323', monospace", color: "#666", fontSize: "12px", marginTop: "8px" }}>
+                * Sample entries shown for era authenticity
+              </p>
+            </div>
+          </Window>
+
+          {/* Back Link */}
+          <div style={{ textAlign: "center", marginTop: "32px" }}>
+            <Button href={`/era/${era}`}>← BACK TO HOME</Button>
+          </div>
+        </div>
+      </main>
+    </>
   );
 }

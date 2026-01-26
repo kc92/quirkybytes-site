@@ -219,7 +219,7 @@ export default function GeocitiesEraPage() {
                 * Sample entries for era authenticity
               </p>
               <div style={{ textAlign: "center", marginTop: "12px" }}>
-                <Button href="/guestbook">✏️ SIGN GUESTBOOK</Button>
+                <Button href="/guestbook?era=geocities">✏️ SIGN GUESTBOOK</Button>
               </div>
             </div>
           </Window>
@@ -234,7 +234,7 @@ export default function GeocitiesEraPage() {
               <p style={{ color: "#fff", fontFamily: "'VT323', monospace", fontSize: "22px", marginBottom: "24px" }}>
                 Got a project? Tell us about it.
               </p>
-              <Button href="/contact" variant="hot">
+              <Button href="/contact?era=geocities" variant="hot">
                 📨 SUBMIT INQUIRY
               </Button>
               <p style={{ color: "#aaa", fontFamily: "'VT323', monospace", fontSize: "16px", marginTop: "16px" }}>

@@ -165,7 +165,7 @@ export default function DawnEraPage() {
                     </tbody>
                   </table>
                   <p>
-                    <a href="/guestbook" style={{ color: "#0000ff" }}>
+                    <a href="/guestbook?era=dawn" style={{ color: "#0000ff" }}>
                       [Sign the Guestbook]
                     </a>
                   </p>
@@ -178,7 +178,7 @@ export default function DawnEraPage() {
                   </h2>
                   <p>
                     For inquiries, please use our{" "}
-                    <a href="/contact" style={{ color: "#0000ff" }}>
+                    <a href="/contact?era=dawn" style={{ color: "#0000ff" }}>
                       electronic inquiry form
                     </a>.
                   </p>
@@ -200,7 +200,7 @@ export default function DawnEraPage() {
                     Last updated: January 26, 2026
                     <br />
                     <br />
-                    <a href="/contact" style={{ color: "#0000ff" }}>
+                    <a href="/contact?era=dawn" style={{ color: "#0000ff" }}>
                       Contact the Webmaster
                     </a>
                     <br />

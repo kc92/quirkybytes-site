@@ -419,7 +419,7 @@ export default function SkeuomorphismEraPage() {
                 Ready to bring your vision to life? Submit an inquiry.
               </p>
               <a
-                href="/contact"
+                href="/contact?era=skeuomorphism"
                 style={{
                   display: "inline-block",
                   padding: "14px 36px",

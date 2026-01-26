@@ -497,7 +497,7 @@ export default function ModernEraPage() {
               </p>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "16px" }}>
                 <a
-                  href="/contact"
+                  href="/contact?era=modern"
                   style={{
                     display: "inline-flex",
                     alignItems: "center",

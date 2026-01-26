@@ -397,7 +397,7 @@ export default function FlatEraPage() {
             
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "16px" }}>
               <a
-                href="/contact"
+                href="/contact?era=flat"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
