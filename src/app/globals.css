@@ -1,26 +1,129 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Silkscreen&family=Comic+Neue:wght@400;700&display=swap');
 
+/* CSS Variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --win-bg: #c0c0c0;
+  --win-dark: #808080;
+  --win-light: #ffffff;
+  --win-blue: #000080;
+  --neon-pink: #ff00ff;
+  --neon-green: #00ff00;
+  --neon-blue: #00ffff;
+  --neon-yellow: #ffff00;
+  --neon-red: #ff0000;
+  --retro-dark: #000033;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'VT323', monospace;
+  min-height: 100vh;
+  background-color: #000033;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000066' fill-opacity='0.4'%3E%3Cpath d='M20 20.5V1h1v19.5h18.5v1H21v18.5h-1V21.5H1v-1h19.5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Font classes - using Silkscreen instead of Press Start 2P for better legibility */
+.font-terminal { font-family: 'VT323', monospace !important; }
+.font-pixel { font-family: 'Silkscreen', 'Courier New', monospace !important; }
+.font-comic { font-family: 'Comic Neue', cursive !important; }
+
+/* Color utilities */
+.text-neon-pink { color: #ff00ff !important; }
+.text-neon-green { color: #00ff00 !important; }
+.text-neon-blue { color: #00ffff !important; }
+.text-neon-yellow { color: #ffff00 !important; }
+.text-win-blue { color: #000080 !important; }
+.bg-win-bg { background-color: #c0c0c0 !important; }
+.bg-win-blue { background-color: #000080 !important; }
+.bg-retro-dark { background-color: #000033 !important; }
+.border-win-dark { border-color: #808080 !important; }
+.border-win-light { border-color: #ffffff !important; }
+.border-neon-green { border-color: #00ff00 !important; }
+
+/* Animations */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff; }
+  to { text-shadow: 0 0 20px #00ffff, 0 0 40px #ff00ff, 0 0 60px #00ffff; }
+}
+
+@keyframes spin3d {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes rainbow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.animate-blink { animation: blink 0.5s infinite; }
+.animate-glow { animation: glow 1.5s ease-in-out infinite alternate; }
+.animate-spin3d { animation: spin3d 3s linear infinite; }
+.animate-scroll { animation: scroll 12s linear infinite; }
+.animate-rainbow { 
+  background-size: 400% 100%;
+  animation: rainbow 2s linear infinite; 
+}
+
+/* Hot badge - more legible */
+.hot-badge {
+  display: inline-block;
+  background: #ff0000;
+  color: #fff;
+  font-family: 'Silkscreen', monospace;
+  font-size: 10px;
+  padding: 2px 8px;
+  animation: blink 0.5s infinite;
+  vertical-align: middle;
+  margin-left: 8px;
+  font-weight: bold;
+}
+
+/* Status badges */
+.status-live {
+  background: #00ff00 !important;
+  color: #000 !important;
+}
+
+.status-soon {
+  background: #ffff00 !important;
+  color: #000 !important;
+}
+
+/* Links */
+a { color: #00ffff; }
+a:hover { text-decoration: underline; }
+
+/* Selection */
+::selection {
+  background: #ff00ff;
+  color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 16px; }
+::-webkit-scrollbar-track {
+  background: #c0c0c0;
+  border: 1px solid #808080;
+}
+::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
 }
