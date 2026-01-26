@@ -10,6 +10,7 @@ export default function ContactPage() {
     projectType: "",
     budget: "",
     message: "",
+    website: "", // Honeypot field - should remain empty
   });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
@@ -26,7 +27,7 @@ export default function ContactPage() {
 
       if (response.ok) {
         setStatus("sent");
-        setFormData({ name: "", email: "", projectType: "", budget: "", message: "" });
+        setFormData({ name: "", email: "", projectType: "", budget: "", message: "", website: "" });
       } else {
         setStatus("error");
       }
@@ -77,6 +78,7 @@ export default function ContactPage() {
                   <input
                     type="text"
                     required
+                    maxLength={100}
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full p-3 font-terminal text-lg border-2 border-win-dark bg-white focus:border-neon-blue outline-none"
@@ -92,6 +94,7 @@ export default function ContactPage() {
                   <input
                     type="email"
                     required
+                    maxLength={254}
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full p-3 font-terminal text-lg border-2 border-win-dark bg-white focus:border-neon-blue outline-none"
@@ -146,10 +149,37 @@ export default function ContactPage() {
                   <textarea
                     required
                     rows={6}
+                    maxLength={2000}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full p-3 font-terminal text-lg border-2 border-win-dark bg-white focus:border-neon-blue outline-none resize-none"
                     placeholder="Tell us about your project..."
+                  />
+                  <div className="text-right text-xs text-gray-500 mt-1">
+                    {formData.message.length}/2000
+                  </div>
+                </div>
+
+                {/* Honeypot - hidden from humans, bots fill it */}
+                <div 
+                  aria-hidden="true" 
+                  style={{ 
+                    position: "absolute", 
+                    left: "-9999px", 
+                    top: "-9999px",
+                    opacity: 0,
+                    pointerEvents: "none",
+                  }}
+                >
+                  <label htmlFor="website">Website (leave blank)</label>
+                  <input
+                    type="text"
+                    id="website"
+                    name="website"
+                    autoComplete="off"
+                    tabIndex={-1}
+                    value={formData.website}
+                    onChange={(e) => setFormData({ ...formData, website: e.target.value })}
                   />
                 </div>
 
