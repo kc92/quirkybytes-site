@@ -16,8 +16,7 @@ export default function PortfolioPage() {
               OUR PORTFOLIO
             </h1>
             <p className="font-terminal text-xl text-white max-w-xl mx-auto">
-              Websites, apps, and games we&apos;ve built. Each project crafted with
-              passion and precision.
+              Stuff we&apos;ve built. Real projects, real clients, real code.
             </p>
           </div>
         </Window>
@@ -71,13 +70,13 @@ export default function PortfolioPage() {
         <Window title="💡 C:\\QuirkyBytes\\Ideas.txt">
           <div className="bg-win-bg p-8 text-center">
             <h2 className="font-pixel text-lg text-win-blue mb-4">
-              GOT A PROJECT IDEA?
+              NEED SOMETHING BUILT?
             </h2>
             <p className="font-terminal text-lg mb-6">
-              We turn concepts into reality. Let&apos;s build something amazing together.
+              Tell us what you&apos;re working on. We&apos;ll tell you if we can help.
             </p>
             <Button href="/contact" variant="hot">
-              📧 START YOUR PROJECT
+              📧 GET IN TOUCH
             </Button>
           </div>
         </Window>

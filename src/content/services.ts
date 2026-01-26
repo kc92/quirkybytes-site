@@ -4,10 +4,9 @@ export const services: Service[] = [
   {
     icon: '🌐',
     title: 'WEBSITES',
-    shortDescription: 'Custom sites that load fast and look amazing',
-    longDescription: `We build websites that stand out from the crowd. From simple landing pages 
-    to complex web applications, we craft every pixel with purpose. Our sites are fast, accessible, 
-    and built with modern technologies that scale.`,
+    shortDescription: 'Fast sites that actually convert',
+    longDescription: `Landing pages, marketing sites, portfolios — whatever you need. 
+    No WordPress themes. No Squarespace. Just code that loads fast and does its job.`,
     features: [
       'Custom design tailored to your brand',
       'Blazing fast performance (95+ Lighthouse scores)',
@@ -20,10 +19,9 @@ export const services: Service[] = [
   {
     icon: '⚡',
     title: 'WEB APPS',
-    shortDescription: 'Full-stack applications built to scale',
-    longDescription: `Need more than a website? We build full-stack web applications that handle 
-    real business logic. From SaaS products to internal tools, we architect solutions that grow 
-    with your needs.`,
+    shortDescription: 'Apps that handle real logic',
+    longDescription: `SaaS products, internal tools, customer portals — if it needs a database 
+    and user accounts, we build it. Modern stack, clean architecture.`,
     features: [
       'Modern React/Next.js architecture',
       'Secure user authentication',
@@ -36,10 +34,9 @@ export const services: Service[] = [
   {
     icon: '🎮',
     title: 'GAMES',
-    shortDescription: 'Browser games to full MMORPGs',
-    longDescription: `From casual browser games to massive multiplayer experiences, we bring 
-    game ideas to life. Our team combines creative vision with technical expertise to create 
-    engaging gaming experiences players love.`,
+    shortDescription: 'Browser games to MMOs',
+    longDescription: `Small browser games, mobile titles, or full multiplayer experiences. 
+    We handle the netcode nightmares so you don't have to.`,
     features: [
       'Browser and mobile games',
       'Multiplayer and netcode expertise',
@@ -52,10 +49,9 @@ export const services: Service[] = [
   {
     icon: '🤖',
     title: 'AI TOOLS',
-    shortDescription: 'Smart automation and chatbots',
-    longDescription: `Leverage the power of AI to automate workflows and enhance user experiences. 
-    We build intelligent tools that save time, reduce costs, and unlock new possibilities for 
-    your business.`,
+    shortDescription: 'Bots and automation that work',
+    longDescription: `Chatbots, workflow automation, AI integrations. We build tools that 
+    actually save you time instead of creating more problems.`,
     features: [
       'Custom AI/ML model development',
       'Chatbots and virtual assistants',

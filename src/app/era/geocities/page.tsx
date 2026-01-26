@@ -71,10 +71,10 @@ export default function GeocitiesEraPage() {
                 QUIRKYBYTES
               </h1>
               <p style={{ fontFamily: "'VT323', monospace", fontSize: "28px", color: "#00ff00", marginBottom: "16px" }}>
-                [ DIGITAL STUDIO ] <span className="hot-badge">HOT!</span>
+                [ WEB DEV STUDIO ] <span className="hot-badge">HOT!</span>
               </p>
               <p style={{ fontFamily: "'VT323', monospace", fontSize: "22px", color: "#fff", maxWidth: "500px", margin: "0 auto 32px" }}>
-                We build websites, apps, and games that stand out. Quality work. No shortcuts.
+                Websites, apps, and games. Built from scratch, not from templates.
               </p>
               <FancyHR />
               <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>

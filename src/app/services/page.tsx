@@ -6,9 +6,9 @@ const services = [
   {
     icon: "🌐",
     name: "WEBSITES",
-    tagline: "From landing pages to complex platforms",
+    tagline: "Fast sites that convert",
     description:
-      "Custom-built websites that load fast, look amazing, and work on every device. No templates, no bloat — just clean, efficient code tailored to your needs.",
+      "Landing pages, marketing sites, portfolios. No WordPress themes, no Squarespace — just code that loads fast and does its job.",
     features: [
       "Responsive design for all devices",
       "SEO optimization built-in",
@@ -21,9 +21,9 @@ const services = [
   {
     icon: "⚡",
     name: "WEB APPLICATIONS",
-    tagline: "Full-stack solutions that scale",
+    tagline: "Apps with real backend logic",
     description:
-      "From internal tools to customer-facing platforms, we build web applications that handle real-world demands. Modern tech stack, robust architecture.",
+      "SaaS products, internal tools, customer portals. If it needs a database and user accounts, we build it.",
     features: [
       "React/Next.js frontend",
       "Node.js/Python backend",
@@ -37,9 +37,9 @@ const services = [
   {
     icon: "🎮",
     name: "GAMES",
-    tagline: "From browser games to MMORPGs",
+    tagline: "Browser games to MMOs",
     description:
-      "Whether it's a simple browser game or a full-scale multiplayer experience, we bring game concepts to life with engaging mechanics and polished execution.",
+      "Small browser games, mobile titles, or full multiplayer experiences. We handle the netcode so you don't have to.",
     features: [
       "Browser-based games",
       "Multiplayer systems",
@@ -52,9 +52,9 @@ const services = [
   {
     icon: "🤖",
     name: "AI & AUTOMATION",
-    tagline: "Smart tools that work for you",
+    tagline: "Bots and automation that actually work",
     description:
-      "Chatbots, automation workflows, AI integrations — we build intelligent systems that save time and enhance user experiences.",
+      "Chatbots, workflow automation, AI integrations. Tools that save you time instead of creating more problems.",
     features: [
       "Custom chatbots",
       "Workflow automation",
@@ -78,7 +78,7 @@ export default function ServicesPage() {
               OUR SERVICES
             </h1>
             <p className="font-terminal text-xl text-white max-w-xl mx-auto">
-              Quality work. No shortcuts. Every project gets our full attention.
+              No templates. No page builders. Just clean code that does what you need.
             </p>
           </div>
         </Window>
@@ -168,13 +168,13 @@ export default function ServicesPage() {
           <Window title="🚀 START_PROJECT.bat">
             <div className="bg-gradient-to-b from-retro-dark to-[#000066] p-10">
               <h2 className="font-pixel text-xl text-neon-yellow mb-4">
-                READY TO BUILD?
+                GOT A PROJECT?
               </h2>
               <p className="font-terminal text-lg text-white mb-6">
-                Tell us about your project and we&apos;ll get back to you within 24 hours.
+                Tell us what you need. We&apos;ll tell you if we&apos;re a fit.
               </p>
               <Button href="/contact" variant="hot">
-                📧 GET IN TOUCH
+                📧 SUBMIT INQUIRY
               </Button>
             </div>
           </Window>

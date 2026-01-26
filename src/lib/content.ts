@@ -4,10 +4,9 @@
 export const siteContent = {
   company: {
     name: "QuirkyBytes",
-    tagline: "Digital Studio",
+    tagline: "Web Dev Studio",
     description:
-      "We build websites, apps, and games that stand out. Quality work. No shortcuts.",
-    founded: "1999",
+      "Websites, apps, and games — built from scratch, not from templates.",
     email: "hello@quirkybytes.com",
   },
 
@@ -16,36 +15,36 @@ export const siteContent = {
       id: "websites",
       icon: "🌐",
       name: "Websites",
-      shortDesc: "Custom sites that load fast and look amazing",
+      shortDesc: "Fast sites that convert",
       longDesc:
-        "From landing pages to complex platforms. No templates, no bloat — just clean, efficient code tailored to your needs.",
+        "Landing pages, marketing sites, portfolios. No templates, just code.",
       price: "Starting at $2,500",
     },
     {
       id: "webapps",
       icon: "⚡",
       name: "Web Applications",
-      shortDesc: "Full-stack applications built to scale",
+      shortDesc: "Apps with real backend logic",
       longDesc:
-        "From internal tools to customer-facing platforms. Modern tech stack, robust architecture, built for real-world demands.",
+        "SaaS, internal tools, customer portals. Modern stack, clean architecture.",
       price: "Starting at $10,000",
     },
     {
       id: "games",
       icon: "🎮",
       name: "Games",
-      shortDesc: "Browser games to full MMORPGs",
+      shortDesc: "Browser games to MMOs",
       longDesc:
-        "Whether it's a simple browser game or a full-scale multiplayer experience. Engaging mechanics, polished execution.",
+        "Small games to full multiplayer. We handle the hard parts.",
       price: "Starting at $15,000",
     },
     {
       id: "ai",
       icon: "🤖",
       name: "AI & Automation",
-      shortDesc: "Smart tools that work for you",
+      shortDesc: "Bots and automation",
       longDesc:
-        "Chatbots, automation workflows, AI integrations. Intelligent systems that save time and enhance experiences.",
+        "Chatbots, workflows, AI integrations. Tools that actually help.",
       price: "Starting at $5,000",
     },
   ],
@@ -54,7 +53,7 @@ export const siteContent = {
     {
       id: "desperados-destiny",
       name: "Desperado's Destiny",
-      shortDesc: "Wild West MMORPG adventure",
+      shortDesc: "Wild West MMO",
       status: "live",
       year: "2025",
       icon: "🤠",
@@ -62,7 +61,7 @@ export const siteContent = {
     {
       id: "wardian",
       name: "Wardian",
-      shortDesc: "Dashboard platform",
+      shortDesc: "Data dashboards",
       status: "live",
       year: "2024",
       icon: "📊",
@@ -70,7 +69,7 @@ export const siteContent = {
     {
       id: "astrogenesis",
       name: "AstroGenesis",
-      shortDesc: "Space exploration RPG",
+      shortDesc: "Space RPG",
       status: "soon",
       year: "2026",
       icon: "🚀",

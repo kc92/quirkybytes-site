@@ -1,17 +1,15 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { CRTEffect } from "@/components/effects/CRTEffect";
-import { MouseTrail } from "@/components/effects/MouseTrail";
 
 export const metadata: Metadata = {
-  title: "★ QuirkyBytes ★ Digital Studio ★",
+  title: "QuirkyBytes | Web Dev Studio",
   description:
-    "We build websites, apps, and games. Quality work. No shortcuts. A revolutionary digital studio.",
+    "Custom websites, web apps, and games. We build what templates can't.",
   keywords: ["web development", "games", "apps", "digital studio", "quirkybytes"],
   authors: [{ name: "QuirkyBytes" }],
   openGraph: {
-    title: "QuirkyBytes Digital Studio",
-    description: "We build websites, apps, and games that stand out.",
+    title: "QuirkyBytes | Web Dev Studio",
+    description: "Custom websites, web apps, and games. We build what templates can't.",
     type: "website",
   },
 };
@@ -24,8 +22,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <CRTEffect />
-        <MouseTrail />
         {children}
       </body>
     </html>
