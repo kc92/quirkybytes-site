@@ -178,14 +178,13 @@ export default function DawnEraPage() {
                     Contact Us
                   </h2>
                   <p>
-                    For inquiries, please send electronic mail to:
-                    <br />
-                    <a href={`mailto:${company.email}`} style={{ color: "#0000ff" }}>
-                      {company.email}
-                    </a>
+                    For inquiries, please use our{" "}
+                    <a href="/contact" style={{ color: "#0000ff" }}>
+                      electronic inquiry form
+                    </a>.
                   </p>
                   <p>
-                    Or visit us on Internet Relay Chat (IRC) at #quirkybytes on EFnet.
+                    <i>You will receive a response from @quirkybytes.com</i>
                   </p>
 
                   <hr style={{ height: "2px", backgroundColor: "#808080", border: "none" }} />
@@ -202,8 +201,8 @@ export default function DawnEraPage() {
                     Last updated: January 26, 2026
                     <br />
                     <br />
-                    <a href={`mailto:${company.email}`} style={{ color: "#0000ff" }}>
-                      Email the Webmaster
+                    <a href="/contact" style={{ color: "#0000ff" }}>
+                      Contact the Webmaster
                     </a>
                     <br />
                     <br />

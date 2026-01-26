@@ -40,7 +40,7 @@ export function Footer() {
       <div className="text-center py-3 bg-black text-[#666] text-sm">
         📅 This page last updated: <b>January 26, 2026</b> | 
         <a href="#" className="text-[var(--electric-blue)] ml-1">Site Map</a> | 
-        <a href="mailto:webmaster@quirkybytes.com" className="text-[var(--electric-blue)] ml-1">Email Webmaster</a>
+        <a href="/contact" className="text-[var(--electric-blue)] ml-1">Contact Us</a>
       </div>
 
       {/* Copyright */}

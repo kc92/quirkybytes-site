@@ -416,10 +416,10 @@ export default function SkeuomorphismEraPage() {
                 Let&apos;s Build Something Amazing
               </h3>
               <p style={{ fontSize: "15px", color: "#b8d0e8", marginBottom: "24px" }}>
-                Ready to bring your vision to life? Get in touch.
+                Ready to bring your vision to life? Submit an inquiry.
               </p>
               <a
-                href={`mailto:${company.email}`}
+                href="/contact"
                 style={{
                   display: "inline-block",
                   padding: "14px 36px",
@@ -435,8 +435,11 @@ export default function SkeuomorphismEraPage() {
                   `,
                 }}
               >
-                Contact Us
+                Submit Inquiry
               </a>
+              <p style={{ fontSize: "13px", color: "#8aa8c8", marginTop: "16px" }}>
+                You&apos;ll receive a response from @quirkybytes.com
+              </p>
             </div>
           </section>
         </main>

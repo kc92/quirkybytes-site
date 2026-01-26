@@ -382,11 +382,11 @@ export default function Web2EraPage() {
               }}
             >
               <p style={{ fontSize: "18px", color: "#555", marginBottom: "24px" }}>
-                Ready to start your next project? Drop us a line!
+                Ready to start your next project? Submit an inquiry!
               </p>
-              <div style={{ display: "flex", gap: "16px", justifyContent: "center" }}>
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "16px" }}>
                 <a
-                  href={`mailto:${company.email}`}
+                  href="/contact"
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
@@ -402,8 +402,11 @@ export default function Web2EraPage() {
                     boxShadow: "0 3px 6px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2)",
                   }}
                 >
-                  ✉️ Email Us
+                  ✉️ Submit Inquiry
                 </a>
+                <p style={{ fontSize: "13px", color: "#888" }}>
+                  You&apos;ll receive a response from @quirkybytes.com
+                </p>
               </div>
             </div>
           </section>

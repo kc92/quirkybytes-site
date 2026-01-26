@@ -226,11 +226,14 @@ export default function GeocitiesEraPage() {
                 GET IN TOUCH!
               </h2>
               <p style={{ color: "#fff", fontFamily: "'VT323', monospace", fontSize: "22px", marginBottom: "24px" }}>
-                Ready to build something amazing? Let&apos;s talk!
+                Ready to build something amazing? Submit an inquiry!
               </p>
-              <Button href="mailto:hello@quirkybytes.com?subject=Project%20Inquiry" variant="hot">
-                📨 EMAIL US NOW!
+              <Button href="/contact" variant="hot">
+                📨 SUBMIT INQUIRY
               </Button>
+              <p style={{ color: "#aaa", fontFamily: "'VT323', monospace", fontSize: "16px", marginTop: "16px" }}>
+                You&apos;ll receive a response from @quirkybytes.com
+              </p>
             </div>
           </Window>
         </div>

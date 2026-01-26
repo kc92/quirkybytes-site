@@ -417,12 +417,12 @@ export default function AIEraPage() {
               Ready to start?
             </h2>
             <p style={{ fontSize: "16px", color: theme.textMuted, marginBottom: "28px" }}>
-              Let&apos;s discuss your next project. We respond within 24 hours.
+              Submit an inquiry and we&apos;ll get back to you within 24 hours.
             </p>
             
-            <div style={{ display: "flex", gap: "12px", justifyContent: "center" }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "12px" }}>
               <a
-                href={`mailto:${company.email}`}
+                href="/contact"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -436,8 +436,11 @@ export default function AIEraPage() {
                   borderRadius: "10px",
                 }}
               >
-                ✉️ Email Us
+                ✉️ Submit Inquiry
               </a>
+              <p style={{ fontSize: "13px", color: theme.textMuted }}>
+                You&apos;ll receive a response from @quirkybytes.com
+              </p>
             </div>
           </div>
         </section>

@@ -392,12 +392,12 @@ export default function FlatEraPage() {
               Let&apos;s Talk
             </h2>
             <p style={{ fontSize: "18px", color: "rgba(255,255,255,0.9)", marginBottom: "40px" }}>
-              Have a project in mind? We&apos;d love to hear about it.
+              Have a project in mind? Submit an inquiry and we&apos;ll get back to you.
             </p>
             
-            <div style={{ display: "flex", gap: "16px", justifyContent: "center" }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "16px" }}>
               <a
-                href={`mailto:${company.email}`}
+                href="/contact"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -413,8 +413,11 @@ export default function FlatEraPage() {
                   borderRadius: "4px",
                 }}
               >
-                ✉️ Email Us
+                ✉️ Submit Inquiry
               </a>
+              <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.7)" }}>
+                You&apos;ll receive a response from @quirkybytes.com
+              </p>
             </div>
           </div>
         </section>

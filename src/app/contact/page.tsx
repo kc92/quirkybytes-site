@@ -204,20 +204,15 @@ export default function ContactPage() {
           </div>
         </Window>
 
-        {/* Alternative Contact */}
-        <Window title="📞 OTHER_WAYS.txt">
+        {/* Response Info */}
+        <Window title="📬 WHAT_HAPPENS_NEXT.txt">
           <div className="p-6 bg-win-bg text-center">
-            <p className="font-terminal text-lg mb-4">
-              Prefer a different way to reach us?
+            <p className="font-terminal text-lg mb-2">
+              ✅ Once you submit your inquiry, we&apos;ll review it and get back to you.
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <a
-                href="mailto:hello@quirkybytes.com"
-                className="flex items-center gap-2 px-6 py-3 bg-white border-2 border-win-dark font-terminal no-underline text-black hover:bg-[#ffffcc]"
-              >
-                📧 hello@quirkybytes.com
-              </a>
-            </div>
+            <p className="font-terminal text-base text-gray-600">
+              You&apos;ll receive a response from <strong>@quirkybytes.com</strong> within 24-48 hours.
+            </p>
           </div>
         </Window>
 
