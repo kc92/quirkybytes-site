@@ -68,12 +68,11 @@ export default function DawnEraPage() {
                     About {company.name}
                   </h2>
                   <p>
-                    {company.name} is a digital studio founded in {company.founded}. We specialize
-                    in creating World Wide Web pages, interactive applications, and computer games.
+                    {company.name} is a web development studio. We build 
+                    World Wide Web pages, interactive applications, and computer games.
                   </p>
                   <p>
-                    Our team of experienced webmasters and programmers are dedicated to bringing
-                    your ideas to life on the Information Superhighway.
+                    Custom work only. No templates.
                   </p>
 
                   <hr style={{ height: "2px", backgroundColor: "#808080", border: "none" }} />
@@ -206,7 +205,7 @@ export default function DawnEraPage() {
                     </a>
                     <br />
                     <br />
-                    Copyright © {company.founded}-2026 {company.name}. All rights reserved.
+                    Copyright © 2026 {company.name}. All rights reserved.
                   </p>
                 </td>
               </tr>
