@@ -1,0 +1,10 @@
+{
+  "blockedIPs": [
+    {
+      "ip": "185.220.100.242",
+      "reason": "Security flagged - malicious submission on QuirkyBytes contact form",
+      "blockedAt": "2026-02-08T13:09:00-05:00",
+      "blockedBy": "The Architect"
+    }
+  ]
+}
